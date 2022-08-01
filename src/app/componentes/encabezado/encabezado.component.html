@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Porfolio:</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#Seccion_AcercaDe">Acerca De</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#Seccion_Educacion">Educación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#Seccion_Experiencia">Experiencia</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div id="Encabezado" class="mb-2 p-2" class="m-5" >    
+    <div id="fondo" class="fondo">    
+      <div id="info" style="padding:16px">      
+        <div id="info-img">
+            <img src="./assets/img/yo.jpg" class="rounded-circle" width="100" height="100"/>           
+        </div>        
+      </div>    
+    </div>
+    <section  class="mb-2 p-2">  
+    <h1 id="nombre" class="nombre">{{miPorfolio.nombre}} </h1>
+      <p id="perfil1"> {{miPorfolio.posicion}} </p>
+      <p id="perfil2"> {{miPorfolio.posicion2}} </p>
+      <p id="perfil3"> {{miPorfolio.mail}} </p>
+      <p id="residencia"> {{miPorfolio.ubicacion}} </p>
+      <button *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#modalEncabezado">Editar</button>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="tituloModalEncabezado" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="tituloModalEncabezado">Editar Encabezado</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="form">
+                  <div class="mb-3">
+                      <label for="nombre" class="form-label">Apellido y Nombre</label>
+                      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                      <div *ngIf="nombre?.invalid && nombre?.touched">
+                          <div *ngIf="nombre?.errors?.['required']" class="text-danger">
+                              El apellido y nombre es requerido.
+                          </div>
+                          <div *ngIf="nombre?.errors?.['minlength']" class="text-danger">
+                             El apellido y nombre debe tener como  mínimo 5 caracteres.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="posicion" class="form-label">Posición</label>
+                      <input type="text" class="form-control" id="posicion" formControlName="posicion">
+                  </div>
+                  <div class="mb-3">
+                    <label for="posicion2" class="form-label">Posición 2</label>
+                    <input type="text" class="form-control" id="posicion2" formControlName="posicion2">
+                  </div>
+                  <div class="mb-3">
+                          <label for="ubicacion" class="form-label">Lugar de residencia</label>
+                          <input type="text" class="form-control" id="ubicacion" formControlName="ubicacion">
+                  </div>
+                  <div class="mb-3">
+                          <label for="email" class="form-label">email</label>
+                          <input type="text" class="form-control" id="email" formControlName="email">
+                  </div>                  
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" id="cerrarModalEncabezado" class="btn btn-secondary"
+                  data-bs-dismiss="modal">Salir</button>
+              <button type="button" class="btn btn-primary" (click)="guardarDatosEncabezado()">Guardar</button>
+          </div>

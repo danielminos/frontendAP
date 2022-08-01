@@ -1,0 +1,10 @@
+{
+	"educacion": {
+			"institucion": "EET N°1 - Conrado Etchevarne",
+			"titulo": "Técnico en Computación",
+			"img": "https://www.ort.edu.ar/img/LogoOrtArgWeb2017.jpg",
+			"carrera": "Computacion",
+			"desde": "1988",
+			"hasta": "1993"
+		}
+}

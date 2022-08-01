@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+p{
+    font-family: monospace;
+    font-size:x-large;
+}
+body{
+    margin: 12px;
+}
+.nombre{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 45px;
+    letter-spacing: -1.6px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    color:blueviolet;
+}
+section {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+}

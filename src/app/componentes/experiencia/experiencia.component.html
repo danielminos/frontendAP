@@ -1,0 +1,67 @@
+<div id="Seccion_Experiencia" class="m-5">
+    <section  class="mb-2 p-2"> 
+    <h1>Experiencia</h1>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+            <h2> {{experienciaLista.Empresa}} </h2>
+          </div>
+          <div class="col-8">
+            <h2> {{experienciaLista.division}} </h2>
+            <p> {{experienciaLista.ocupacion}} </p>
+            <p>{{experienciaLista.detalle}}</p>
+          </div>
+          <div class="col">
+                <p> {{experienciaLista.desde}} </p>
+                <p> {{experienciaLista.hasta}} </p>
+          </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" data-bs-toggle="modal" 
+           data-bs-target="#modalExperiencia">Editar</button>      
+    </section>
+ </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="tituloModalExperiencia" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="tituloModalExperiencia">Editar Experiencia</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="form">
+                  <div class="mb-3">
+                      <label for="Empresa" class="form-label">Empresa</label>
+                      <input type="text" class="form-control" id="Empresa" formControlName="Empresa">                      
+                  </div>
+                  <div class="mb-3">
+                      <label for="division" class="form-label">Division</label>
+                      <input type="text" class="form-control" id="division" formControlName="division">
+                      <div class="mb-3">
+                          <label for="ocupacion" class="form-label">Ocupacion</label>
+                          <input type="text" class="form-control" id="ocupacion" formControlName="ocupacion">
+                      </div>
+                      <div class="mb-3">
+                          <label for="desde" class="form-label">Año Inicio</label>
+                          <input type="text" class="form-control" id="desde" formControlName="desde">
+                      </div>
+                      <div class="mb-3">
+                        <label for="hasta" class="form-label">Año Fin</label>
+                        <input type="text" class="form-control" id="hasta" formControlName="hasta">
+                    </div>
+                    <div class="mb-3">
+                      <label for="detalle" class="form-label">Detalle de Tareas</label>
+                      <input type="text" class="form-control" id="detalle" formControlName="detalle">
+                  </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" id="cerrarModalExperiencia" class="btn btn-secondary"
+                  data-bs-dismiss="modal">Salir</button>
+              <button type="button" class="btn btn-primary" (click)="guardarDatosExperiencia()">Guardar</button>
+          </div>
+
+

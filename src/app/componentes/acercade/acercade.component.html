@@ -1,0 +1,39 @@
+<div id="Seccion_AcercaDe" class="m-5">
+    <section  class="mb-2 p-2">
+        <h1>Acerca de</h1>
+        <div>
+            <p id="acerca-de"> {{miPorfolio.acerca}} </p>
+            <p id="acerca-de"> {{miPorfolio.acerca2}} </p>
+        </div>
+        <button class="btn btn-primary" data-bs-toogle="modal" 
+        data-bs-target="#modalAcercaDe">Editar</button>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAcercaDe" tabindex="-1" aria-labelledby="tituloModalAcercaDe" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModalAcercaDe">Editar Acerca De</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="acerca" class="form-label">Acerca De</label>
+                        <input type="text" class="form-control" id="acerca" formControlName="acerca">
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="acerca2" class="form-label">Acerca De (2)</label>
+                        <input type="text" class="form-control" id="acerca2" formControlName="acerca2">                        
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cerrarModalAcercaDe" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-primary" (click)="guardarAcercaDe()">Guardar</button>
+            </div>
+  
